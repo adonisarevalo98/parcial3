@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-
 import { Router } from "@reach/router";
 
 import SignIn from "./SignIn";
@@ -10,19 +9,20 @@ import ProfilePage from "./ProfilePage";
 import { UserContext } from "../providers/UserProvider";
 
 
-function Application() {  
+function Application() {
   // Asigna un user para leer el contexto actual.
   // React encontrará el Provider superior más cercano 
   // y usará su valor.
   const user = useContext(UserContext);
-  console.log(" Usuario Application : " + user); 
+  console.log(" Usuario Application : " + user);
 
-  return (    
-    user ? <ProfilePage /> :
-      <Router>
-        <SignIn  path="/" />
-        <SignUp path="signUp" />
-        <PasswordReset path="passwordReset" />
+  return (
+    user ? <ProfilePage />  // true
+      : // false
+      <Router> 
+          <SignIn path="/" />
+          <SignUp path="signUp" />
+          <PasswordReset path="passwordReset" />      
       </Router>
   );
 }

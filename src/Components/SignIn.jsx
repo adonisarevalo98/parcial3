@@ -3,21 +3,24 @@ import { Link } from "@reach/router";
 import { signInWithGoogle } from "../firebase";
 import { auth } from "../firebase";
 
-
 const SignIn = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
+
   const signInWithEmailAndPasswordHandler = (event) => {
-    event.preventDefault(); // POST , GET -> PHP , JAVA , ASP , ETC
+
+    event.preventDefault(); //DOM -> POST , GET -> PHP , JAVA , ASP , ETC
+   
     console.log(" SignIn - signInWithEmailAndPasswordHandler ");
-    auth.signInWithEmailAndPassword(email, password).catch(error => {
+    const user= auth.signInWithEmailAndPassword(email, password).catch(error => {
         setError("Error, por favor revisar credenciales -> " + error);
         console.error("Error signing in with password and email ", error);
       });
       console.log(" SignIn - signInWithEmailAndPassword ");  
+      console.log(" const user :  " + user);      
   };
 
   const onChangeHandler = (event) => {

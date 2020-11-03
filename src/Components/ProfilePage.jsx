@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "../providers/UserProvider";
 import { auth } from "../firebase";
-import { Router, Link, Redirect } from "@reach/router";
+import { Router, Link } from "@reach/router";
 
 import Info from "./Home/Info"
 import Contacto from "./Home/Contacto"
@@ -18,8 +18,7 @@ const ProfilePage = () => {
   console.log(" Usuario ProfilePage : " + displayName + " - " + email);
 
   const signOut = () => {
-    auth.signOut();
-    return <Redirect to="/" />
+    auth.signOut();  
   };
 
   return (
@@ -50,7 +49,7 @@ const ProfilePage = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <span class="float-right">
+            <span className="float-right">
               <div
                 style={{
                   background: `url(${photoURL || 'https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png'})  no-repeat center center`,

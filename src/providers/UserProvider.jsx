@@ -4,7 +4,7 @@ import { auth, generateUserDocument } from "../firebase";
 // Context se usa principalmente cuando algunos datos tienen que ser accesibles
 // por muchos componentes en diferentes niveles de anidamiento. 
 // Aplícalo con moderación porque hace que la reutilización de 
-//componentes sea más difícil.
+// componentes sea más difícil.
 
 
 // Context nos permite pasar un valor a lo profundo del árbol de componentes
@@ -14,7 +14,7 @@ export const UserContext = createContext({ user: null });
 
 class UserProvider extends Component {
 
-  state = { user: null };
+  state = {user: null};
 
   /* 
   Esto activaba al triggered  cuando los usuarios iniciaban sesión, 
@@ -30,6 +30,10 @@ class UserProvider extends Component {
       this.setState({ user });      
       console.log("++++++++++++++++++++++++++++++++++");    
     });
+  };
+
+  setUserContext = (usertmp) => {  
+    this.setState({ usertmp });    
   };
 
   render() {

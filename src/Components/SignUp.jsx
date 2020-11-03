@@ -9,8 +9,10 @@ const SignUp = () => {
   const [displayName, setDisplayName] = useState("");
   const [error, setError] = useState(null);
 
-  const createUserWithEmailAndPasswordHandler = async (event, email, password) => {
-    event.preventDefault();
+  const createUserWithEmailAndPasswordHandler = async (event) => {
+
+    event.preventDefault(); // POST , GET , PHP, JAVA , ASP, ETC
+
     setError("");
     try {
       const { user } = await auth.createUserWithEmailAndPassword(email, password);
@@ -36,9 +38,9 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <nav class="navbar navbar-inverse">
-        <ul class="nav navbar-nav">
+    <div className="">
+      <nav className="navbar navbar-inverse">
+        <ul className="nav navbar-nav">
         </ul>
       </nav>
       <div className="mt-8">
@@ -85,10 +87,9 @@ const SignUp = () => {
                 onChange={(event) => onChangeHandler(event)} />
             </div>  
                        
-            <button
-              className="bg-green-400 hover:bg-green-500 w-full py-2 text-white"
+            <button className="bg-green-400 hover:bg-green-500 w-full py-2 text-white" 
               onClick={event => {
-                createUserWithEmailAndPasswordHandler(event, email, password);
+                createUserWithEmailAndPasswordHandler(event);
               }}
             ><i class="fa fa-save"></i>  Guardar
           </button>
