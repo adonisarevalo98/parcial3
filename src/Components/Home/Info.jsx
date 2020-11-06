@@ -1,8 +1,12 @@
 import React from "react";
-
+import SucursalesInfo  from "./SucursalesInfo"
 const Info = () => (
   <React.Fragment>
-    <p>Esta compañia se fundó en el 2020, Mas que una compañia, somos una solucion</p>
-  </React.Fragment>
-)
+  
+  <div className="container">
+      <SucursalesInfo></SucursalesInfo>
+        
+      </div>
+</React.Fragment>
+);
 export default Info

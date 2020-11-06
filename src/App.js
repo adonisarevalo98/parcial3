@@ -6,9 +6,12 @@ import UserProvider from "./providers/UserProvider";
 function App() {
   return (
     <UserProvider>
-      <Application />
+       <div className="header">
+       <Application />
+       </div>
+      
       <div className="footer">
-        <p>PRUEBAS LOGIN</p>
+        <p>Universidad Don Bosco</p>
       </div>
     </UserProvider>
 

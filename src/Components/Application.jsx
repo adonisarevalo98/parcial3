@@ -6,6 +6,7 @@ import SignUp from "./SignUp";
 import PasswordReset from "./PasswordReset";
 
 import ProfilePage from "./ProfilePage";
+import SucursalesList from "./Home/SucursalesList";
 import { UserContext } from "../providers/UserProvider";
 
 
@@ -17,7 +18,9 @@ function Application() {
   console.log(" Usuario Application : " + user);
 
   return (
-    user ? <ProfilePage />  // true
+    user ? 
+    <ProfilePage />
+      // true
       : // false
       <Router> 
           <SignIn path="/" />
